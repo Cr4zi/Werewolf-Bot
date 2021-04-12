@@ -21,11 +21,15 @@ class Werewolf(commands.Bot):
         main = sqlite3.connect('main.sqlite')
         cursor = main.cursor()
         cursor.execute('''
-        CREATE TABLE IF NOT EXISTS main(
-            usr_id TEXT,
-            money TEXT,
-            start_time TEXT,
-            end_time TEXT
+            CREATE TABLE IF NOT EXISTS main(
+            guild_id TEXT,
+            werewolfs_id TEXT,
+            doctors_id TEXT,
+            detectives_id TEXT,
+            humans_id TEXT,
+            werewolf_count TEXT,
+            doctors_count TEXT,
+            detectives_count TEXT
         ''')
 
 
