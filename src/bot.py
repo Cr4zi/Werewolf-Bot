@@ -30,6 +30,7 @@ class Werewolf(commands.Bot):
             werewolf_count TEXT,
             doctors_count TEXT,
             detectives_count TEXT
+            )
         ''')
 
 
