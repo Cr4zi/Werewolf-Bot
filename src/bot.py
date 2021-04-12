@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import os
+import sqlite3
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -16,6 +17,17 @@ class Werewolf(commands.Bot):
             reactions=True,
         )
         super().__init__(command_prefix='>', intents=intents)
+
+        main = sqlite3.connect('main.sqlite')
+        cursor = main.cursor()
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS main(
+            usr_id TEXT,
+            money TEXT,
+            start_time TEXT,
+            end_time TEXT
+        ''')
+
 
         self.load_extension('cogs.commands')
 
