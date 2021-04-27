@@ -50,6 +50,11 @@ class Commands(commands.Cog):
         pass
 
     @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def delete_game(self, ctx):
+        pass
+
+    @commands.command()
     async def kill(self, ctx, target: discord.Member):
         pass
 
